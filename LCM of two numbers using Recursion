@@ -1,0 +1,21 @@
+#include<stdio.h>
+int lcmOfTwoNumbers(int,int);
+	int a,b,r;
+int main(){
+	printf("Enter two numbers for which you wants to find out LCM\n");
+	scanf("%d%d",&a,&b);
+	r=lcmOfTwoNumbers(a,b);
+	printf("The LCM of Number %d and %d are %d\n",a,b,r);
+	return 0;
+}
+int lcmOfTwoNumbers(int a,int b){
+	static int temp=1;
+		if(temp%a==0 && temp%b==0){
+			return temp;
+	}
+	else{
+		temp++;
+		lcmOfTwoNumbers(a,b);	
+		
+	}
+}
